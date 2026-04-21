@@ -29,13 +29,9 @@ python3 main.py
 
 ```
 src/
-
 ├── main.py        # Entry point, starts the game loop
-
 ├── game.py        # Core game mechanics (rules, turns, flow)
-
 ├── ai.py          # AI logic (bot behavior)
-
 ├── cards.py       # Deck system and card utilities
 
 ```
