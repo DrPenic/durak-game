@@ -28,10 +28,16 @@ python3 main.py
 ## 📁 Project Structure
 
 ```
-main.py      # entry point, game loop
-game.py      # core game mechanics
-ai.py        # AI logic
-cards.py     # deck and card utilities
+src/
+
+├── main.py        # Entry point, starts the game loop
+
+├── game.py        # Core game mechanics (rules, turns, flow)
+
+├── ai.py          # AI logic (bot behavior)
+
+├── cards.py       # Deck system and card utilities
+
 ```
 
 ## 📌 Future Improvements
