@@ -38,8 +38,6 @@ src/
 
 ## 📌 Future Improvements
 
-* Add table mechanics (cards on the table)
-* Implement card throwing (“podkidnoy” rules)
 * Improve AI decision-making
 * Add a graphical interface
 
