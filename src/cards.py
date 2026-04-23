@@ -24,6 +24,12 @@ def deal_cards(deck, num_cards = 6):
         computer_hand.append(deck.pop(0))
     return player_hand, computer_hand, deck
 
+def draw_cards(player_hand, computer_hand, deck, attacker_first=True):
+    while len(player_hand) < 6 and deck:
+        player_hand.append(deck.pop(0))
+    while len(computer_hand) < 6 and deck:
+        computer_hand.append(deck.pop(0))
+
 def card_value(rank):
     order = ['6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     return order.index(rank)
@@ -31,7 +37,13 @@ def card_value(rank):
 def card_strength(card, trump_suit):
     rank, suit = card
     base = card_value(rank)
-
     if suit == trump_suit:
         base += 100
     return base
+
+def can_beat(defend, attack, trump_suit):
+    if defend[1] == attack[1] and card_value(defend[0]) > card_value(attack[0]):
+        return True
+    if defend[1] == trump_suit and attack[1] != trump_suit:
+        return True
+    return False

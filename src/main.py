@@ -9,23 +9,20 @@ player_hand, computer_hand, deck = deal_cards(deck)
 
 attacker = 'player'
 
-while player_hand and computer_hand:
+while player_hand is not None and computer_hand is not None:
     print('\n==========')
     print(f'Козырь: {trump_suit}')
 
     if attacker == 'player':
-        success = player_attack_turn(player_hand, computer_hand, trump_suit)
-        if success:
-            attacker = 'computer'
-        else:
-            attacker = 'player'
+        print('Твой ход: ')
+        success = turn(player_hand, computer_hand, 'human', 'ai', trump_suit, table)
+        attacker = 'computer' if success else 'player'
     else:
-        success = ai_attack_turn(computer_hand, player_hand, trump_suit)
-        if success:
-            attacker = 'player'
-        else:
-            attacker = 'computer'
-
+        print('Ход противника: ')
+        success = turn(computer_hand, player_hand, 'ai', 'human', trump_suit, table)
+        attacker = 'player' if success else 'computer'
+    if success:
+        table.clear()
     draw_cards(player_hand, computer_hand, deck)
 
     print('\n--- Состояние ---')
