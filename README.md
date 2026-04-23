@@ -38,8 +38,9 @@ src/
 
 ## 📌 Future Improvements
 
-* Improve AI decision-making
 * Add a graphical interface
+* Improve AI decision-making
+* Add PvP mode
 
 ## 🛠 Tech Stack
 
