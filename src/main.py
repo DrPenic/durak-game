@@ -24,14 +24,15 @@ while player_hand is not None and computer_hand is not None:
     if success:
         table.clear()
     draw_cards(player_hand, computer_hand, deck)
+    if len(deck) == 0 and not player_hand:
+        print('Ты выиграл!')
+        break
+    elif len(deck) == 0 and not computer_hand:
+        print('Ты проиграл!')
+        break
 
     print('\n--- Состояние ---')
     print('Ты: ', len(player_hand), 'карт')
     print('Комп: ', len(computer_hand), 'карт')
 
     input('\nEnter для следующего хода...')
-
-if not player_hand:
-    print('Ты выиграл!')
-elif not computer_hand:
-    print('Компьютер выиграл!')
